@@ -2,16 +2,24 @@
   <div>
     <h2>{{ title }}</h2>
     <ul>
-      <slot />
-      <!-- 메뉴아이템 -->
+      <MenuItem
+        v-for="item in items"
+        :key="item.name"
+        v-model="item.amount"
+        :name="item.name"
+      />
     </ul>
   </div>
 </template>
 
 <script>
+import MenuItem from './MenuItem.vue';
+
 export default {
+  components: { MenuItem },
   props: {
-    title: { type: String, required: true }
+    title: { type: String, required: true },
+    items: { type: Array, required: true }
   }
 }
 </script>

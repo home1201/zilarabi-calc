@@ -57,3 +57,14 @@ textarea {
   min-width: 0;
   /* flex 컨테이너에서 width: 100%로 설정해서 사용 */
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

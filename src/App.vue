@@ -6,7 +6,7 @@
       총 금액: <span class="total-cost__value">{{ TotalCost }}원</span>
     </div>
     <label class="received">
-      손님이 준 금액: <input v-model="received" type="number">원
+      손님이 준 금액: <input v-model="received" type="number" class="received__value">원
     </label>
     <div class="change">
       거스름돈:
@@ -103,4 +103,10 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.received {
+  &__value {
+    width: 4rem;
+  }
+}
+</style>

@@ -1,3 +1,7 @@
+/* breakpoint */
+$mobile-width: 30rem;
+$content-max-width: 72.5rem;
+
 /* Color */
 :root {
   --color-white: rgba(255, 255, 255, 1);
@@ -18,9 +22,10 @@
   --color-secondary-100: rgba(253, 234, 216, 1);
 
   /* Font-size styles */
-  --font-size-800: 3rem;
-  --font-size-700: 2.25rem;
-  --font-size-600: 1.5rem;
+  --font-size-900: 3rem;
+  --font-size-800: 2.25rem;
+  --font-size-700: 1.5rem;
+  --font-size-600: 1.25rem;
   --font-size-500: 1.125rem;
   --font-size-400: 1rem;
   --font-size-300: .875rem;
@@ -41,12 +46,3 @@
   --radius-min: 30px;
   --radius-max: 50%;
 }
-
-/* breakpoint */
-:root {
-  --mobile-width: 30rem;
-  --content-max-width: 72.5rem;
-}
-
-@custom-media --mobile-viewport (width <=30em);
-@custom-media --content-max-viewport (30em < width <=72.5em)

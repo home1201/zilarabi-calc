@@ -18,8 +18,15 @@ body {
   /* color: var(--color-gray-500); */
   line-height: 1.6;
   word-break: keep-all;
-  /* font-size: var(--font-size-400); */
+  font-size: var(--font-size-600);
   /* background-color: var(--color-primary-brown-100); */
+}
+
+#app {
+  margin-inline: auto;
+  max-width: $mobile-width;
+  padding-inline: var(--space-300);
+  text-align: center;
 }
 
 a {
@@ -29,8 +36,6 @@ a {
     color: inherit;
   }
 }
-
-
 
 img {
   width: 100%;
@@ -52,9 +57,15 @@ button {
   cursor: pointer;
 }
 
+label {
+  display: inline-block;
+}
+
 input,
 textarea {
   min-width: 0;
+  height: 1.5rem;
+  vertical-align: middle;
   /* flex 컨테이너에서 width: 100%로 설정해서 사용 */
 }
 

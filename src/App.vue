@@ -1,18 +1,20 @@
 <template>
-  <div>
-    <h1>안심다방 계산기</h1>
+  <h1 class="title">안심다방 계산기</h1>
+  <div class="menu-list">
     <MenuList v-for="submenu in menu" :key="submenu.listName" :title="submenu.listName" :items="submenu.items" />
-    <div class="total-cost">
-      총 금액: <span class="total-cost__value">{{ TotalCost }}원</span>
-    </div>
-    <label class="received">
-      손님이 준 금액: <input v-model="received" type="number" class="received__value">원
+  </div>
+  <div class="total-cost">
+    총 금액 : <span class="total-cost__value">{{ TotalCost }}원</span>
+  </div>
+  <div class="received">
+    <label class="received__label">
+      손님이 준 금액<input v-model="received" type="number" class="received__input">
     </label>
-    <div class="change">
-      거스름돈:
-      <span class="change__value">{{ Change }}</span>
-    </div>
-    <!-- 거스름돈 계산 (손님이 준 돈 입력 포함) -->
+    원
+  </div>
+  <div class="change">
+    거스름돈 :
+    <span class="change__value">{{ Change }}</span>
   </div>
 </template>
 
@@ -31,21 +33,21 @@ export default {
           items: [
             {
               name: '아메리카노',
-              amount: 0,
+              amount: null,
               cost: 2000,
-              imageurl: ""
+              imageurl: "@/assets/images/americano.png"
             },
             {
               name: '카페라떼',
-              amount: 0,
+              amount: null,
               cost: 2500,
-              imageurl: ""
+              imageurl: "@/assets/images/latte.png"
             },
             {
               name: "바닐라라떼",
-              amount: 0,
+              amount: null,
               cost: 2500,
-              imageurl: ""
+              imageurl: "@/assets/images/vanila.png"
             },
           ]
         },
@@ -54,38 +56,38 @@ export default {
           items: [
             {
               name: "초코라떼",
-              amount: 0,
+              amount: null,
               cost: 2500,
-              imageurl: ""
+              imageurl: "@/assets/images/choco.png"
             },
             {
               name: "망고스무디",
-              amount: 0,
+              amount: null,
               cost: 3000,
-              imageurl: ""
+              imageurl: "@/assets/images/mango.png"
             },
             {
               name: "요거트스무디",
-              amount: 0,
+              amount: null,
               cost: 2500,
-              imageurl: ""
+              imageurl: "@/assets/images/yogurt.png"
             },
             {
-              name: "복숭아아이스티",
-              amount: 0,
+              name: "복숭아티",
+              amount: null,
               cost: 2000,
-              imageurl: ""
+              imageurl: "@/assets/images/icetea.png"
             },
             {
-              name: "복숭아아이스티 커피 추가",
-              amount: 0,
+              name: "복숭아티 커피",
+              amount: null,
               cost: 2500,
-              imageurl: ""
+              imageurl: "@/assets/images/icetea.png"
             }
           ]
         }
       ],
-      received: 0,
+      received: null,
     }
   },
   computed: {
@@ -104,9 +106,41 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  margin-top: var(--space-400);
+}
+
+.menu-list {
+  margin-top: var(--space-400);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .received {
-  &__value {
+  display: block;
+  margin-top: var(--space-200);
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__input {
     width: 4rem;
+    margin-inline-start: var(--space-200);
+  }
+}
+
+.total-cost {
+  margin-top: var(--space-500);
+}
+
+.total-cost,
+.change {
+  font-weight: 600;
+
+  &__value {
+    color: var(--color-secondary-500);
   }
 }
 </style>

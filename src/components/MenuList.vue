@@ -7,6 +7,7 @@
         :key="item.name"
         v-model="item.amount"
         :name="item.name"
+        :image-url="item.imageurl"
       />
     </ul>
   </div>

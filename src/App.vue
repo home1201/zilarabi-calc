@@ -35,19 +35,19 @@ export default {
               name: '아메리카노',
               amount: null,
               cost: 2000,
-              imageurl: "@/assets/images/americano.png"
+              imageurl: "src/assets/images/americano.png"
             },
             {
               name: '카페라떼',
               amount: null,
               cost: 2500,
-              imageurl: "@/assets/images/latte.png"
+              imageurl: "src/assets/images/latte.png"
             },
             {
               name: "바닐라라떼",
               amount: null,
               cost: 2500,
-              imageurl: "@/assets/images/vanila.png"
+              imageurl: "src/assets/images/vanila.png"
             },
           ]
         },
@@ -58,31 +58,31 @@ export default {
               name: "초코라떼",
               amount: null,
               cost: 2500,
-              imageurl: "@/assets/images/choco.png"
+              imageurl: "src/assets/images/choco.png"
             },
             {
               name: "망고스무디",
               amount: null,
               cost: 3000,
-              imageurl: "@/assets/images/mango.png"
+              imageurl: "src/assets/images/mango.png"
             },
             {
               name: "요거트스무디",
               amount: null,
               cost: 2500,
-              imageurl: "@/assets/images/yogurt.png"
+              imageurl: "src/assets/images/yogurt.png"
             },
             {
               name: "복숭아티",
               amount: null,
               cost: 2000,
-              imageurl: "@/assets/images/icetea.png"
+              imageurl: "src/assets/images/icetea.png"
             },
             {
               name: "복숭아티 커피",
               amount: null,
               cost: 2500,
-              imageurl: "@/assets/images/icetea.png"
+              imageurl: "src/assets/images/icetea_coffee.png"
             }
           ]
         }
@@ -114,6 +114,7 @@ export default {
   margin-top: var(--space-400);
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
 }
 
 .received {

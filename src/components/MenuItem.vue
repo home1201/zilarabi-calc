@@ -1,14 +1,21 @@
 <template>
   <li class="item">
-    <label class="item__label">{{ name }}
-      <input
-        type="number"
-        class="item__input"
-        :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
-      >
-    </label>
-    개
+    <img
+      class="item__image"
+      alt=""
+      :src="imageUrl"
+    >
+    <div class="item__text">
+      <label class="item__label">{{ name }}
+        <input
+          type="number"
+          class="item__input"
+          :value="modelValue"
+          @input="$emit('update:modelValue', $event.target.value)"
+        >
+      </label>
+      개
+    </div>
   </li>
 </template>
 
@@ -19,8 +26,12 @@ export default {
       type: String,
       required: true,
     },
+    imageUrl: {
+      type: String,
+      required: true
+    },
     modelValue: {
-      type: Number,
+      type: [Number, null],
       required: true
     }
   },
@@ -33,9 +44,21 @@ export default {
 
 <style scoped>
 .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
   &__label {
     display: inline-flex;
     align-items: center;
+    margin-inline-end: -0.2ch;
+  }
+
+  &__image {
+    height: 7rem;
+    width: auto;
+    grid-column: span 2;
   }
 
   &__input {

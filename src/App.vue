@@ -107,11 +107,11 @@ export default {
 
 <style scoped>
 .title {
-  margin-top: var(--space-400);
+  margin-block-start: var(--space-400);
 }
 
 .menu-list {
-  margin-top: var(--space-400);
+  margin-block-start: var(--space-400);
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
@@ -119,7 +119,7 @@ export default {
 
 .received {
   display: block;
-  margin-top: var(--space-200);
+  margin-block-start: var(--space-200);
 
   &__label {
     display: inline-flex;
@@ -133,16 +133,20 @@ export default {
 }
 
 .total-cost {
-  margin-top: var(--space-400);
+  margin-block-start: var(--space-400);
 }
 
 .total-cost,
 .change {
-  padding-top: var(--space-200);
+  padding-block-start: var(--space-200);
   font-weight: 600;
 
   &__value {
     color: var(--color-secondary-500);
   }
+}
+
+.change {
+  margin-block-end: var(--space-700);
 }
 </style>

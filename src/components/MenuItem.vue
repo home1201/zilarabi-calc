@@ -3,7 +3,7 @@
     <img
       class="item__image"
       alt=""
-      :src="imageUrl"
+      :src="ConvertedImageUrl"
     >
     <div class="item__text">
       <label class="item__label">{{ name }}
@@ -36,9 +36,14 @@ export default {
     }
   },
   emits: ['update:modelValue'],
+  computed: {
+    ConvertedImageUrl() {
+      return `${import.meta.env.BASE_URL}${this.imageUrl}`;
+    }
+  },
   methods: {
 
-  },
+  }
 }
 </script>
 
@@ -47,6 +52,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-block-end: var(--space-300);
 
 
   &__label {

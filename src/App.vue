@@ -41,7 +41,7 @@ export default {
               name: '카페라떼',
               amount: null,
               cost: 2500,
-              imageurl: "images/latte.png"
+              imageurl: "images/latte.webp"
             },
             {
               name: "바닐라라떼",
@@ -58,7 +58,7 @@ export default {
               name: "초코라떼",
               amount: null,
               cost: 2500,
-              imageurl: "images/choco.png"
+              imageurl: "images/choco.webp"
             },
             {
               name: "망고스무디",

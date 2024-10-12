@@ -8,6 +8,8 @@
         v-model="item.amount"
         :name="item.name"
         :image-url="item.imageurl"
+        :width="item.width"
+        :height="item.height"
       />
     </ul>
   </div>

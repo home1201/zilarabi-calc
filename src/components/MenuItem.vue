@@ -1,18 +1,10 @@
 <template>
   <li class="item">
-    <img
-      class="item__image"
-      alt=""
-      :src="ConvertedImageUrl"
-    >
+    <img class="item__image" alt="" :width="width" :height="height" :src="ConvertedImageUrl">
     <div class="item__text">
       <label class="item__label">{{ name }}
-        <input
-          type="number"
-          class="item__input"
-          :value="modelValue"
-          @input="$emit('update:modelValue', $event.target.value)"
-        >
+        <input type="number" class="item__input" :value="modelValue"
+          @input="$emit('update:modelValue', $event.target.value)">
       </label>
       개
     </div>
@@ -29,6 +21,14 @@ export default {
     imageUrl: {
       type: String,
       required: true
+    },
+    width: {
+      type: Number,
+      required: true,
+    },
+    height: {
+      type: Number,
+      required: true,
     },
     modelValue: {
       type: [Number, null],
@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .item {
   display: flex;
   flex-direction: column;
@@ -62,14 +62,14 @@ export default {
   }
 
   &__image {
-    height: 7rem;
-    width: auto;
     grid-column: span 2;
+    width: auto;
+    height: 7rem;
   }
 
   &__input {
-    margin-inline-start: var(--space-200);
     width: 5ch;
+    margin-inline-start: var(--space-200);
   }
 }
 </style>

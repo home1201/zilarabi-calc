@@ -1,12 +1,12 @@
-@import "variables.css";
+@use 'variables' as v;
 
 /* Reset  */
 *,
 *::before,
 ::after {
-  margin: 0;
-  padding: 0;
   box-sizing: inherit;
+  padding: 0;
+  margin: 0;
 }
 
 html {
@@ -15,17 +15,19 @@ html {
 
 body {
   font-family: "Wanted Sans Variable", system-ui, sans-serif;
+  font-size: var(--font-size-600);
+
   /* color: var(--color-gray-500); */
   line-height: 1.6;
   word-break: keep-all;
-  font-size: var(--font-size-600);
+
   /* background-color: var(--color-primary-brown-100); */
 }
 
 #app {
-  margin-inline: auto;
-  max-width: $mobile-width;
+  max-width: v.$mobile-width;
   padding-inline: var(--space-300);
+  margin-inline: auto;
   text-align: center;
 }
 
@@ -40,7 +42,7 @@ a {
 img {
   width: 100%;
   height: auto;
-  aspect-ratio: attr(width) / attr(height);
+  aspect-ratio: auto 4 / 3;
 }
 
 h2 {
@@ -66,16 +68,17 @@ textarea {
   min-width: 0;
   height: 1.5rem;
   vertical-align: middle;
+
   /* flex 컨테이너에서 width: 100%로 설정해서 사용 */
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
   margin: 0;
+  appearance: none;
 }
 
 /* Firefox */
 input[type="number"] {
-  -moz-appearance: textfield;
+  appearance: textfield;
 }

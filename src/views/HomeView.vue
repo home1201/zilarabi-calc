@@ -100,6 +100,8 @@ const menuItems: Ref<MenuType[]> = ref([
 const coffeeItems = computed(() => menuItems.value.filter((item: MenuType) => item.isCoffee === true))
 const nonCoffeeItems = computed(() => menuItems.value.filter((item: MenuType) => item.isCoffee === false))
 
+// https://zilarabi-pocket-frosty-frost-5055.fly.dev/api/collections/menu_item/records
+// https://zilarabi-pocket-frosty-frost-5055.fly.dev/api/files/menu_item/mcixnk5ktpqxc9e/americano_0HcyJcIAV1.webp
 </script>
 
 <script lang="ts">

@@ -11,31 +11,26 @@
     </div>
     <div class="change">
       거스름돈 :
-      <span class="change__value">{{ ChangeMessage }}</span>
+      <span class="change__value">{{ changeMessage }}</span>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  props: {
-    totalCost: {
-      type: Number,
-      required: true,
-    }
-  },
-  data() {
-    return {
-      received: null,
-    }
-  },
-  computed: {
-    ChangeMessage() {
-      const result = this.received - this.totalCost;
-      return result >= 0 ? `${result}원` : `${Math.abs(result)}원을 더 받아야 합니다`
-    }
-  },
-}
+<script setup lang="ts">
+import { computed, ref } from 'vue';
+import type { Ref } from 'vue';
+
+const props = defineProps({
+  totalCost: {
+    type: Number,
+    required: true,
+  }
+})
+const received: Ref<number | null> = ref(null)
+const changeMessage = computed(() => {
+  const result = received.value - props.totalCost;
+  return result >= 0 ? `${result}원` : `${Math.abs(result)}원을 더 받아야 합니다`
+})
 </script>
 
 <style lang="scss" scoped>

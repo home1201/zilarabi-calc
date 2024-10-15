@@ -1,50 +1,37 @@
 <template>
   <li class="item">
-    <img class="item__image" alt="" :width="width" :height="height" :src="ConvertedImageUrl">
+    <img class="item__image" alt="" :width="width" :height="height" :src="convertedUrl">
     <div class="item__text">
       <label class="item__label">{{ name }}
-        <input type="number" class="item__input" :value="modelValue"
-          @input="$emit('update:modelValue', $event.target.value)">
-      </label>
-      개
+        <input type="number" class="item__input" v-model="amount" </label>
+        개
     </div>
   </li>
 </template>
 
-<script lang="ts">
-export default {
-  props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    imageUrl: {
-      type: String,
-      required: true
-    },
-    width: {
-      type: Number,
-      required: true,
-    },
-    height: {
-      type: Number,
-      required: true,
-    },
-    modelValue: {
-      type: [Number, null],
-      required: true
-    }
-  },
-  emits: ['update:modelValue'],
-  computed: {
-    ConvertedImageUrl() {
-      return `${import.meta.env.BASE_URL}${this.imageUrl}`;
-    }
-  },
-  methods: {
+<script setup lang="ts">
+import { computed } from 'vue';
 
-  }
-}
+const props = defineProps({
+  name: {
+    type: String,
+    required: true,
+  },
+  imageUrl: {
+    type: String,
+    required: true
+  },
+  width: {
+    type: Number,
+    required: true,
+  },
+  height: {
+    type: Number,
+    required: true,
+  },
+})
+const convertedUrl = computed(() => `${import.meta.env.BASE_URL}${props.imageUrl}`)
+const amount = defineModel<number | null>()
 </script>
 
 <style scoped lang="scss">

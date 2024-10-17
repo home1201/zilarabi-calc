@@ -1,20 +1,18 @@
 import js from "@eslint/js";
 import pluginVue from "eslint-plugin-vue";
-import tseslint from "typescript-eslint";
+import ts from "typescript-eslint";
+import vueParser from "vue-eslint-parser";
 
 export default [
   js.configs.recommended,
   ...pluginVue.configs["flat/recommended"],
-  ...tseslint.configs.recommended,
+  ...ts.configs.recommended,
   {
-    rules: {},
-    plugins: {
-      "typescript-eslint": tseslint.plugin,
-    },
-    files: ["*.vue", "**/*.vue"],
+    files: ["**/*.js", "**/*.ts", "**/*.vue"],
     languageOptions: {
+      parser: vueParser,
       parserOptions: {
-        parser: "@typescript-eslint/parser",
+        parser: ts.parser,
       },
     },
   },

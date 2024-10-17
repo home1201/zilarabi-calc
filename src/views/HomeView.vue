@@ -1,8 +1,16 @@
 <template>
-  <h1 class="title">안심다방 계산기</h1>
+  <h1 class="title">
+    안심다방 계산기
+  </h1>
   <div class="menu-list">
-    <MenuList title="커피" :items="coffeeItems" />
-    <MenuList title="음료" :items="nonCoffeeItems" />
+    <MenuList
+      title="커피"
+      :items="coffeeItems"
+    />
+    <MenuList
+      title="음료"
+      :items="nonCoffeeItems"
+    />
   </div>
   <TheCost :total-cost="totalCost" />
 </template>

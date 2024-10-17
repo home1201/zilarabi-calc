@@ -4,22 +4,22 @@ $content-max-width: 72.5rem;
 
 /* Color */
 :root {
-  --color-white: rgba(255, 255, 255, 1);
-  --color-gray-500: rgba(68, 68, 68, 1);
-  --color-gray-400: rgba(142, 142, 142, 1);
-  --color-gray-300: rgba(198, 198, 198, 1);
-  --color-gray-200: rgba(236, 236, 236, 1);
-  --color-gray-100: rgba(245, 245, 245, 1);
-  --color-primary-500: rgba(173, 139, 115, 1);
-  --color-primary-400: rgba(205, 178, 154, 1);
-  --color-primary-300: rgba(230, 208, 184, 1);
-  --color-primary-200: rgba(246, 233, 213, 1);
-  --color-primary-100: rgba(250, 244, 234, 1);
-  --color-secondary-500: rgba(226, 94, 62, 1);
-  --color-secondary-400: rgba(237, 143, 108, 1);
-  --color-secondary-300: rgba(246, 175, 139, 1);
-  --color-secondary-200: rgba(252, 209, 178, 1);
-  --color-secondary-100: rgba(253, 234, 216, 1);
+  --color-white: rgb(255 255 255 / 100%);
+  --color-gray-500: rgb(68 68 68 / 100%);
+  --color-gray-400: rgb(142 142 142 / 100%);
+  --color-gray-300: rgb(198 198 198 / 100%);
+  --color-gray-200: rgb(236 236 236 / 100%);
+  --color-gray-100: rgb(245 245 245 / 100%);
+  --color-primary-500: rgb(173 139 115 / 100%);
+  --color-primary-400: rgb(205 178 154 / 100%);
+  --color-primary-300: rgb(230 208 184 / 100%);
+  --color-primary-200: rgb(246 233 213 / 100%);
+  --color-primary-100: rgb(250 244 234 / 100%);
+  --color-secondary-500: rgb(226 94 62 / 100%);
+  --color-secondary-400: rgb(237 143 108 / 100%);
+  --color-secondary-300: rgb(246 175 139 / 100%);
+  --color-secondary-200: rgb(252 209 178 / 100%);
+  --color-secondary-100: rgb(253 234 216 / 100%);
 
   /* Font-size styles */
   --font-size-900: 3rem;

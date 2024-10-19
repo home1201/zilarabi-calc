@@ -1,18 +1,24 @@
 <template>
   <li class="item">
-    <img class="item__image" alt="" :width="width" :height="height" :src="convertedUrl">
+    <img
+      class="item__image"
+      alt=""
+      :src="imageUrl"
+    >
     <div class="item__text">
       <label class="item__label">{{ name }}
-        <input type="number" class="item__input" v-model="amount" </label>
-        개
+        <input
+          v-model="amount"
+          type="number"
+          class="item__input"
+        > </label>
+      개
     </div>
   </li>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-
-const props = defineProps({
+defineProps({
   name: {
     type: String,
     required: true,
@@ -21,16 +27,7 @@ const props = defineProps({
     type: String,
     required: true
   },
-  width: {
-    type: Number,
-    required: true,
-  },
-  height: {
-    type: Number,
-    required: true,
-  },
 })
-const convertedUrl = computed(() => `${import.meta.env.BASE_URL}${props.imageUrl}`)
 const amount = defineModel<number | null>()
 </script>
 

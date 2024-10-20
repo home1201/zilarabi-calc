@@ -43,11 +43,10 @@ const totalCost = computed(() =>
 
 const isMenuFetched: Ref<boolean> = ref(false);
 onMounted(() => {
-  fetch('/api/collections/menu_item/records')
-    .then(res => res.json())
+  fetch('/api/collections/menu_item/records').then(res => res.json())
     .then(res => {
       menuItems.value = res.items.map(item => ({
-        name: item.name, isCoffee: item.isCoffee, imageUrl: `https://zilarabi-pocket-frosty-frost-5055.fly.dev/api/files/menu_item/mcixnk5ktpqxc9e/${item.image}`, cost: item.cost, amount: null,
+        name: item.name, isCoffee: item.isCoffee, imageUrl: `https://zilarabi-pocket-frosty-frost-5055.fly.dev/api/files/menu_item/${item.id}/${item.image}`, cost: item.cost, amount: null,
       }))
       isMenuFetched.value = true;
     })

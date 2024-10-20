@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/api/*"
+  to = "https://zilarabi-pocket-frosty-frost-5055.fly.dev/api/:splat"
+  status = 200
+  force = true

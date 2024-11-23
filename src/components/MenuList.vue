@@ -2,13 +2,8 @@
   <div>
     <h2>{{ title }}</h2>
     <ul>
-      <MenuItem
-        v-for="item in items"
-        :key="item.name"
-        v-model="item.amount"
-        :name="item.name"
-        :image-url="item.imageUrl"
-      />
+      <MenuItem v-for="item in items" :key="item.name" v-model="item.amount" :name="item.name"
+        :image-url="item.imageUrl" :id="item.id" :cost="item.cost" />
     </ul>
   </div>
 </template>

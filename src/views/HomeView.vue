@@ -2,18 +2,9 @@
   <h1 class="title">
     안심다방 계산기
   </h1>
-  <div
-    v-if="isMenuFetched"
-    class="menu-list"
-  >
-    <MenuList
-      title="커피"
-      :items="coffeeItems"
-    />
-    <MenuList
-      title="음료"
-      :items="nonCoffeeItems"
-    />
+  <div v-if="isMenuFetched" class="menu-list">
+    <MenuList title="커피" :items="coffeeItems" />
+    <MenuList title="음료" :items="nonCoffeeItems" />
   </div>
   <TheCost :total-cost="totalCost" />
 </template>
@@ -46,7 +37,8 @@ onMounted(() => {
   fetch('/api/collections/menu_item/records').then(res => res.json())
     .then(res => {
       menuItems.value = res.items.map(item => ({
-        name: item.name, isCoffee: item.isCoffee, imageUrl: `https://zilarabi-pocket-frosty-frost-5055.fly.dev/api/files/menu_item/${item.id}/${item.image}`, cost: item.cost, amount: null,
+        ...item,
+        imageUrl: `https://zilarabi-pocket-frosty-frost-5055.fly.dev/api/files/menu_item/${item.id}/${item.image}`, amount: null,
       }))
       isMenuFetched.value = true;
     })

@@ -1,6 +1,6 @@
 {
   "name": "zilarabi",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -32,6 +32,5 @@
     "vite": "^5.3.1",
     "vite-plugin-vue-devtools": "^7.3.1",
     "vue-eslint-parser": "^9.4.3"
-  },
-  "homepage": "https://homeqwert.github.io/레포지토리이름"
+  }
 }

@@ -2,16 +2,28 @@
   <h1 class="title">
     안심다방 계산기
   </h1>
-  <div v-if="isMenuFetched" class="menu-list">
-    <MenuList title="커피" :items="coffeeItems" />
-    <MenuList title="음료" :items="nonCoffeeItems" />
+  <div
+    v-if="isMenuFetched"
+    class="menu-list"
+  >
+    <MenuList
+      title="커피"
+      :items="coffeeItems"
+    />
+    <MenuList
+      title="음료"
+      :items="nonCoffeeItems"
+    />
   </div>
-  <TheCost :total-cost="totalCost" />
+  <BottomBar
+    :total-cost="totalCost"
+    @reset-amount="resetAmount"
+  />
 </template>
 
 <script setup lang="ts">
 import MenuList from '@/components/MenuList.vue';
-import TheCost from '@/components/TheCost.vue';
+import BottomBar from '@/components/BottomBar.vue';
 
 import { ref, computed, onMounted } from 'vue';
 import type { Ref } from 'vue';
@@ -43,6 +55,12 @@ onMounted(() => {
       isMenuFetched.value = true;
     })
 })
+
+const resetAmount = () => {
+  menuItems.value.forEach(menuItem => {
+    menuItem.amount = null;
+  })
+}
 
 // https://zilarabi-pocket-frosty-frost-5055.fly.dev/api/collections/menu_item/records
 // https://zilarabi-pocket-frosty-frost-5055.fly.dev/api/files/menu_item/mcixnk5ktpqxc9e/americano_0HcyJcIAV1.webp

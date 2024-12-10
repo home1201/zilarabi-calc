@@ -27,13 +27,13 @@
 
 <script setup lang="ts">
 defineProps<{
-  name: string,
-  imageUrl: string,
-  id: string,
-  cost: number
+  name: string;
+  imageUrl: string;
+  id: string;
+  cost: number;
 }>();
 
-const amount = defineModel<number | null>()
+const amount = defineModel<number | null>();
 </script>
 
 <style scoped lang="scss">

@@ -70,7 +70,7 @@ const closeNotify = (event) => {
   position: sticky;
   bottom: 0;
   display: grid;
-  grid-template: auto auto 1fr / 5fr 4fr;
+  grid-template: auto auto 1fr / auto 1fr;
   grid-auto-flow: column;
   row-gap: var(--space-100);
   width: 100%;
@@ -95,7 +95,7 @@ const closeNotify = (event) => {
 
 .reset {
   grid-row: span 3;
-  margin: var(--space-500) var(--space-600);
+  margin: var(--space-500) var(--space-400);
   font-weight: 600;
   background-color: var(--color-secondary-300);
   filter: drop-shadow(0 1px 1px var(--color-secondary-500));

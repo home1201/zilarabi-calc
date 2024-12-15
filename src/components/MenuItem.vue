@@ -3,6 +3,7 @@
     <img
       class="item__image"
       alt=""
+      decoding="async"
       :src="imageUrl"
     >
     <div class="item__text">
